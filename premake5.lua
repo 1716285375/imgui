@@ -26,17 +26,17 @@ project "ImGui"  -- 使用标准命名
 -- 3. 平台分支
     filter "system:windows"
         systemversion "latest"
-        buildoptions "/D_CRT_SECURE_NO_WARNINGS"  -- 只保留必要的编译选项
+        staticruntime "on"
     
     filter "system:linux"
-        pic "On"
+        pic "on"
 
 
 -- 4. 通用编译选项
     filter "configurations:Debug"
-        symbols "On"
+        symbols "on"
         runtime "Debug"
 
     filter "configurations:Release"
-        optimize "On"
+        optimize "on"
         runtime "Release"
